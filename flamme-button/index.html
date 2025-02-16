@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bouton Flamme</title>
+  <style>
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background: #222;
+    }
+
+    .btn {
+      font-size: 20px;
+      padding: 15px 30px;
+      color: white;
+      background: linear-gradient(45deg, #ff416c, #ff4b2b);
+      border: none;
+      border-radius: 50px;
+      cursor: pointer;
+      position: relative;
+      overflow: hidden;
+      transition: 0.3s;
+      box-shadow: 0 4px 10px rgba(255, 69, 96, 0.5);
+    }
+
+    .btn:hover {
+      transform: scale(1.1);
+      box-shadow: 0 8px 20px rgba(255, 69, 96, 0.7);
+    }
+
+    .btn::before {
+      content: "";
+      position: absolute;
+      width: 300%;
+      height: 300%;
+      background: radial-gradient(circle, rgba(255, 255, 255, 0.4) 10%, transparent 20%);
+      top: -150%;
+      left: -100%;
+      animation: flames 1.5s infinite linear;
+    }
+
+    @keyframes flames {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+  </style>
+</head>
+<body>
+  <button class="btn">🔥 Cliquez-moi 🔥</button>
+</body>
+</html>

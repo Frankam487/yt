@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Compte à Rebours Personnalisé</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="bubbles">
+        
+    </div>
+
+    <div class="countdown-container">
+        <h1>Compte à Rebours</h1>
+        <div class="countdown">
+            <div class="time" id="hours">00<span>Heures</span></div>
+            <div class="time" id="minutes">00<span>Minutes</span></div>
+            <div class="time" id="seconds">00<span>Secondes</span></div>
+        </div>
+    </div>
+
+    <div class="inputs">
+        <input type="number" id="inputHours" placeholder="H" min="0">
+        <input type="number" id="inputMinutes" placeholder="M" min="0">
+        <input type="number" id="inputSeconds" placeholder="S" min="0">
+    </div>
+
+    <div class="buttons">
+        <button class="btn start-btn" onclick="startCountdown()">Démarrer</button>
+        <button class="btn reset-btn" onclick="resetCountdown()">Annuler</button>
+    </div>
+
+    <script src="./app.js"></script>
+</body>
+</html>

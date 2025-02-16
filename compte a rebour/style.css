@@ -1,0 +1,168 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background: linear-gradient(135deg, #0077ff, #e66900);
+  color: white;
+  text-align: center;
+  overflow: hidden;
+  position: relative;
+}
+
+/* Conteneur des bulles */
+.bubbles {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  z-index: -1;
+}
+
+/* Bulles */
+.bubbles span {
+  position: absolute;
+  bottom: -100px;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+  animation: rise 10s linear infinite;
+}
+
+/* Différentes tailles et vitesses */
+.bubbles span:nth-child(odd) {
+  width: 20px;
+  height: 20px;
+  animation-duration: 12s;
+}
+
+.bubbles span:nth-child(even) {
+  width: 40px;
+  height: 40px;
+  animation-duration: 15s;
+}
+
+.bubbles span:nth-child(3n) {
+  width: 60px;
+  height: 60px;
+  animation-duration: 18s;
+}
+
+/* Animation des bulles */
+@keyframes rise {
+  from {
+    transform: translateY(0);
+    opacity: 0.5;
+  }
+
+  to {
+    transform: translateY(-100vh);
+    opacity: 0;
+  }
+}
+
+.countdown-container {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 40px;
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  margin-bottom: 20px;
+  position: relative;
+  z-index: 1;
+}
+
+h1 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+}
+
+.countdown {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+.time {
+  background: rgba(255, 255, 255, 0.2);
+  padding: 20px;
+  border-radius: 10px;
+  min-width: 80px;
+  position: relative;
+  transition: transform 0.3s ease-in-out;
+}
+
+.time span {
+  display: block;
+  font-size: 1rem;
+  font-weight: normal;
+  margin-top: 5px;
+}
+
+.buttons,
+.inputs {
+  display: flex;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.btn {
+  padding: 10px 20px;
+  font-size: 1.2rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.start-btn {
+  background: #28a745;
+  color: white;
+}
+
+.start-btn:hover {
+  background: #218838;
+}
+
+.reset-btn {
+  background: #dc3545;
+  color: white;
+}
+
+.reset-btn:hover {
+  background: #c82333;
+}
+
+.inputs input {
+  width: 60px;
+  padding: 5px;
+  font-size: 1rem;
+  text-align: center;
+  border: none;
+  border-radius: 5px;
+}
+
+/* Animation uniquement sur l'élément qui change */
+.flip {
+  animation: flip 0.5s ease-in-out;
+}
+
+@keyframes flip {
+  from {
+    transform: rotateX(0);
+  }
+
+  to {
+    transform: rotateX(360deg);
+  }
+}
